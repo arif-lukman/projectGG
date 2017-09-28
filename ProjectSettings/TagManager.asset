@@ -46,6 +46,9 @@ TagManager:
   - name: Background
     uniqueID: 1506535411
     locked: 0
+  - name: Spawner
+    uniqueID: 1142216161
+    locked: 0
   - name: Platform
     uniqueID: 1296367207
     locked: 0
