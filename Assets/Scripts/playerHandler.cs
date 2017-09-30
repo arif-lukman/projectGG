@@ -29,6 +29,19 @@ public class playerHandler : MonoBehaviour {
 	//var boleh loncat apa engga
 	private bool canJump;
 
+	//var timer Evation
+	public float timerEva;
+
+	//var Cooldown Evation
+	private bool coolEva;
+
+	//var arah
+	private bool arah ; 
+
+
+	//var boleh evation
+	private bool canEva;
+
 	//set state
 	public playerState state;
 
@@ -56,6 +69,10 @@ public class playerHandler : MonoBehaviour {
 			//kiri
 			Move("LEFT");
 		}
+		//input Evation
+		if (Input.GetKeyDown (KeyCode.LeftShift) && canEva == true) {
+			Move ("Eva");
+		}
 		//input vertikal
 		if (Input.GetKeyDown (KeyCode.UpArrow) && state == playerState.TOP) {
 			//loncat
@@ -75,6 +92,21 @@ public class playerHandler : MonoBehaviour {
 		}
 		//panah atas = loncat
 		//panah bawah kalo di platform kedua = loncat ke bawah
+		if(timerEva>.5f)
+		{
+			canEva = false;
+			coolEva = true;
+			timerEva -= Time.deltaTime;
+			textUI.text= "cooldown evation : " +timerEva.ToString();
+		}
+		else if (timerEva <.5f && coolEva == false )
+		{
+			canEva = true;
+		}
+		else if (timerEva <= 0f )
+		{
+			coolEva = false;
+		}
 	}
 
 	void OnCollisionStay2D(Collision2D collision){
@@ -111,6 +143,15 @@ public class playerHandler : MonoBehaviour {
 		//gerak kiri
 		else if (_dir == "LEFT") {
 			dir = new Vector2 (-movSpd, 0f);
+		}
+		else if (_dir == "Eva") {
+			if (arah == true) {
+				timerEva += Time.deltaTime * 3;
+				dir = new Vector2 (-movSpd * 75, 0f);
+			} else if (arah == false) {
+				timerEva += Time.deltaTime * 3;
+				dir = new Vector2 (movSpd * 75, 0f);
+			}
 		}
 		rb2d.AddForce (dir);
 	}
