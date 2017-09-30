@@ -681,7 +681,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1433492487}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746e7aa1a8ba4654e873bfc3dffc37b5, type: 3}
   m_Name: 
@@ -1148,6 +1148,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114053937467848010, guid: eda1a610da3924144a54ce7f7be4b912,
+        type: 2}
+      propertyPath: skills.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4361872995790958, guid: eda1a610da3924144a54ce7f7be4b912, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2.61
@@ -1208,6 +1213,26 @@ Prefab:
         type: 2}
       propertyPath: movSpd
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114053937467848010, guid: eda1a610da3924144a54ce7f7be4b912,
+        type: 2}
+      propertyPath: timerEva
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114053937467848010, guid: eda1a610da3924144a54ce7f7be4b912,
+        type: 2}
+      propertyPath: skills.Array.data[0].name
+      value: evade
+      objectReference: {fileID: 0}
+    - target: {fileID: 114053937467848010, guid: eda1a610da3924144a54ce7f7be4b912,
+        type: 2}
+      propertyPath: skills.Array.data[0].cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114053937467848010, guid: eda1a610da3924144a54ce7f7be4b912,
+        type: 2}
+      propertyPath: skills.Array.data[0].available
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eda1a610da3924144a54ce7f7be4b912, type: 2}

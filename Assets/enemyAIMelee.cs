@@ -151,14 +151,14 @@ public class enemyAIMelee : MonoBehaviour {
 	}
 
 	void AggroTop(){
-		if (playerScript.state == playerHandler.playerState.BOT) {
+		if (playerScript.posSt == playerHandler.posState.BOT) {
 			//Debug.Log ("BAWAH");
 			Jump ("DOWN");
 		}
 	}
 
 	void AggroBot(){
-		if (playerScript.state == playerHandler.playerState.TOP) {
+		if (playerScript.posSt == playerHandler.posState.TOP) {
 			//Debug.Log ("ATAS");
 			Jump ("UP");
 		}
