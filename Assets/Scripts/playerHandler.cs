@@ -9,6 +9,10 @@ public class playerHandler : MonoBehaviour {
 	//player bisa terputar
 	//kalo nyentuh objek healing orb loncatnya tinggi
 
+	//TODO:
+	//1. Fix bug
+	//2. Bikin attack mechanism
+
 	//class skill
 	[System.Serializable]
 	public class Skill{
@@ -30,6 +34,8 @@ public class playerHandler : MonoBehaviour {
 			}
 		}*/
 	}
+
+	public Transform bullet;
 
 	//enum position state
 	//pembanding
@@ -57,6 +63,9 @@ public class playerHandler : MonoBehaviour {
 	//var rigidbody2d player
 	public Rigidbody2D rb2d;
 
+	//var sprite player
+	public SpriteRenderer sp;
+
 	//var UI debug
 	public Text textUI;
 
@@ -76,6 +85,7 @@ public class playerHandler : MonoBehaviour {
 
 	//objek upper platform
 	private GameObject top;
+	private GameObject[] enemies;
 
 	//nyimpen vektor2 arah
 	private Vector2 dir;
@@ -88,11 +98,17 @@ public class playerHandler : MonoBehaviour {
 		skills [0].timeLeft = skills [0].cooldown;
 		rb2d = GetComponent<Rigidbody2D> ();
 		bc2d = GetComponent<BoxCollider2D> ();
+		sp = GetComponent<SpriteRenderer> ();
+		rb2d.freezeRotation = true;
 		top = GameObject.FindWithTag ("Upper Platform");
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		enemies = GameObject.FindGameObjectsWithTag ("Monster");
+		foreach (GameObject e in enemies) {
+			Physics2D.IgnoreCollision (bc2d, e.GetComponent<BoxCollider2D> (), true);
+		}
 		//state handling
 		StateHandling ();
 		CooldownHandling ();
@@ -161,6 +177,7 @@ public class playerHandler : MonoBehaviour {
 
 		//attacking
 		case mtnState.ATTACKING:
+			Attacking ();
 			break;
 
 		//evading
@@ -211,16 +228,17 @@ public class playerHandler : MonoBehaviour {
 		//input vertikal
 		if (Input.GetKeyDown (KeyCode.UpArrow) && posSt == posState.TOP) {
 			//loncat
-			Jump("UPTOP");
-		}
-		else if (Input.GetKeyDown (KeyCode.UpArrow) && posSt == posState.BOT) {
+			Jump ("UPTOP");
+		} else if (Input.GetKeyDown (KeyCode.UpArrow) && posSt == posState.BOT) {
 			//loncat
-			Jump("UPBOT");
-		}
-		else if (Input.GetKeyDown (KeyCode.DownArrow) && posSt == posState.TOP) {
+			Jump ("UPBOT");
+		} else if (Input.GetKeyDown (KeyCode.DownArrow) && posSt == posState.TOP) {
 			//turun
-			Jump("DOWN");
+			Jump ("DOWN");
 			posSt = posState.DOWN;
+		} else if (Input.GetKeyDown (KeyCode.Z)) {
+			//serang
+			mtnSt = mtnState.ATTACKING;
 		}
 		if(!canJump && transform.position.y > top.transform.position.y && posSt != posState.DOWN){
 			Physics2D.IgnoreCollision (bc2d, top.GetComponent<BoxCollider2D> (), false);
@@ -308,5 +326,27 @@ public class playerHandler : MonoBehaviour {
 		}
 		//Debug.Log ("my y = " +transform.position.y);
 		//Debug.Log ("his y = " +top.transform.position.y);
+	}
+
+	void Attacking(){
+		//ambil lebar sprite
+		//Debug.Log("Attacking");
+		float bhalfwidth = bullet.GetComponent<SpriteRenderer> ().sprite.rect.width / 200;
+		float bpos = (sp.sprite.rect.width / 200) + bhalfwidth + 0.1f;
+		Vector3 stx = new Vector3(0,0,0);
+		switch (facSt) {
+		case facState.LEFT:
+			stx = new Vector3(transform.position.x-bpos, transform.position.y, 0);
+			break;
+		case facState.RIGHT:
+			stx = new Vector3(transform.position.x+bpos, transform.position.y, 0);
+			break;
+		}
+		//instantiate peluru
+		Transform bulletInstance = Instantiate(bullet, stx, transform.rotation);
+		bulletInstance.transform.localScale = transform.localScale;
+		//Debug.Log("Spawning Enemy: " + bullet);
+		//balik ke move
+		mtnSt = mtnState.MOVING;
 	}
 }

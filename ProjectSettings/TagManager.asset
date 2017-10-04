@@ -8,6 +8,8 @@ TagManager:
   - Monster
   - Upper Platform
   - Lower Platform
+  - Platform
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -59,4 +61,7 @@ TagManager:
     locked: 0
   - name: Pickups
     uniqueID: 1207411531
+    locked: 0
+  - name: Projectile
+    uniqueID: 1909962689
     locked: 0

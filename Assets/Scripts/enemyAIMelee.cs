@@ -28,7 +28,7 @@ public class enemyAIMelee : MonoBehaviour {
 	//kecepatan gerak
 	public float movSpd;
 
-	//HP
+	//hp
 	public int hp;
 
 	//damage
@@ -58,6 +58,7 @@ public class enemyAIMelee : MonoBehaviour {
 	//objek platform
 	private GameObject top;
 	private GameObject bot;
+	private GameObject[] enemies;
 
 	void Start(){
 		player = GameObject.FindWithTag ("Player");
@@ -65,6 +66,7 @@ public class enemyAIMelee : MonoBehaviour {
 		top = GameObject.FindWithTag ("Upper Platform");
 		rb2d = GetComponent<Rigidbody2D> ();
 		bc2d = GetComponent<BoxCollider2D> ();
+		rb2d.freezeRotation = true;
 	}
 
 	void FixedUpdate(){
@@ -85,8 +87,15 @@ public class enemyAIMelee : MonoBehaviour {
 			}
 		}
 
+		enemies = GameObject.FindGameObjectsWithTag ("Monster");
+		foreach (GameObject e in enemies) {
+			Physics2D.IgnoreCollision (bc2d, e.GetComponent<BoxCollider2D> (), true);
+		}
+
 		//panggil fungsi state handling
 		StateHandling();
+		//fungsi cek darah
+		HPChecker ();
 	}
 
 	void OnCollisionStay2D(Collision2D collision){
@@ -109,6 +118,19 @@ public class enemyAIMelee : MonoBehaviour {
 		//cek collision antara objek ini dengan lantai
 		if (collision.gameObject.tag == "Upper Platform" || collision.gameObject.tag == "Lower Platform") {
 			canJump = false;
+		}
+	}
+
+	//fungsi apply damage
+	void ApplyDamage(int dmg){
+		hp -= dmg;
+		return;
+	}
+
+	//fungsi cek HP
+	void HPChecker(){
+		if (hp <= 0) {
+			Destroy (gameObject);
 		}
 	}
 

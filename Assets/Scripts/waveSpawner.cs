@@ -67,10 +67,13 @@ public class waveSpawner : MonoBehaviour {
 
 	bool EnemyIsAlive(){
 		if (searchCountdown <= 0f) {
+			Debug.Log ("Cek musuh");
 			searchCountdown = 1f;
-			if (GameObject.FindGameObjectWithTag ("Enemy") == null) {
+			if (GameObject.FindGameObjectWithTag ("Monster") == null) {
 				return false;
 			}
+		} else {
+			searchCountdown -= Time.deltaTime;
 		}
 		return true;
 	}

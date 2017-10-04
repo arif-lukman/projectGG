@@ -151,6 +151,10 @@ Prefab:
       propertyPath: m_Name
       value: Spawner 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1866589634315744, guid: 9a0539c8b5a016c4a935ab91504978c6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a0539c8b5a016c4a935ab91504978c6, type: 2}
   m_IsPrefabParent: 0
@@ -259,6 +263,10 @@ Prefab:
       propertyPath: m_Name
       value: Health Pickup 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1153392051074128, guid: 4366b27dcc423154e835c5f797bcae5b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4366b27dcc423154e835c5f797bcae5b, type: 2}
   m_IsPrefabParent: 0
@@ -310,83 +318,13 @@ Prefab:
       propertyPath: m_Name
       value: Health Pickup 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1153392051074128, guid: 4366b27dcc423154e835c5f797bcae5b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4366b27dcc423154e835c5f797bcae5b, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &780885542
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 780885543}
-  - component: {fileID: 780885545}
-  - component: {fileID: 780885544}
-  m_Layer: 5
-  m_Name: Text UI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &780885543
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 780885542}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1180506478}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -15}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &780885544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 780885542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: New Text
---- !u!222 &780885545
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 780885542}
 --- !u!1001 &835683357
 Prefab:
   m_ObjectHideFlags: 0
@@ -429,6 +367,10 @@ Prefab:
     - target: {fileID: 1153392051074128, guid: 4366b27dcc423154e835c5f797bcae5b, type: 2}
       propertyPath: m_Name
       value: Health Pickup 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153392051074128, guid: 4366b27dcc423154e835c5f797bcae5b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4366b27dcc423154e835c5f797bcae5b, type: 2}
@@ -485,6 +427,10 @@ Prefab:
     - target: {fileID: 1866589634315744, guid: 9a0539c8b5a016c4a935ab91504978c6, type: 2}
       propertyPath: m_Name
       value: Spawner 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866589634315744, guid: 9a0539c8b5a016c4a935ab91504978c6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a0539c8b5a016c4a935ab91504978c6, type: 2}
@@ -573,8 +519,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 780885543}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -626,6 +571,10 @@ Prefab:
       propertyPath: m_Name
       value: Spawner 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1866589634315744, guid: 9a0539c8b5a016c4a935ab91504978c6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a0539c8b5a016c4a935ab91504978c6, type: 2}
   m_IsPrefabParent: 0
@@ -637,7 +586,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1433492489}
-  - component: {fileID: 1433492488}
   - component: {fileID: 1433492490}
   m_Layer: 0
   m_Name: GameManager
@@ -646,22 +594,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1433492488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1433492487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a791d62f1f609149a6667863ce0e987, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textUI: {fileID: 780885544}
-  jenisStage: 1
-  timer: 0
-  jedaSpawn: 0
-  bossHP: 10000
 --- !u!4 &1433492489
 Transform:
   m_ObjectHideFlags: 0
@@ -681,7 +613,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1433492487}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746e7aa1a8ba4654e873bfc3dffc37b5, type: 3}
   m_Name: 
@@ -689,7 +621,7 @@ MonoBehaviour:
   waves:
   - name: Wave Ciek!
     enemy: {fileID: 4070239486314134, guid: 42d7062aa58799c479c74be128717ebd, type: 2}
-    count: 10
+    count: 3
     rate: 1
   - name: 2nd Wave!
     enemy: {fileID: 4070239486314134, guid: 42d7062aa58799c479c74be128717ebd, type: 2}
@@ -711,6 +643,52 @@ Transform:
   m_PrefabParentObject: {fileID: 4568156396346644, guid: 9a0539c8b5a016c4a935ab91504978c6,
     type: 2}
   m_PrefabInternal: {fileID: 1214524338}
+--- !u!1001 &1521726028
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4070239486314134, guid: 42d7062aa58799c479c74be128717ebd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.5615322
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070239486314134, guid: 42d7062aa58799c479c74be128717ebd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070239486314134, guid: 42d7062aa58799c479c74be128717ebd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070239486314134, guid: 42d7062aa58799c479c74be128717ebd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070239486314134, guid: 42d7062aa58799c479c74be128717ebd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070239486314134, guid: 42d7062aa58799c479c74be128717ebd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070239486314134, guid: 42d7062aa58799c479c74be128717ebd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070239486314134, guid: 42d7062aa58799c479c74be128717ebd, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530422189101318, guid: 42d7062aa58799c479c74be128717ebd, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 42d7062aa58799c479c74be128717ebd, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1645389910
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,6 +825,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1866589634315744, guid: 9a0539c8b5a016c4a935ab91504978c6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a0539c8b5a016c4a935ab91504978c6, type: 2}
   m_IsPrefabParent: 0
@@ -943,6 +925,10 @@ Prefab:
       propertyPath: m_Name
       value: Health Pickup 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1153392051074128, guid: 4366b27dcc423154e835c5f797bcae5b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4366b27dcc423154e835c5f797bcae5b, type: 2}
   m_IsPrefabParent: 0
@@ -1006,7 +992,7 @@ GameObject:
   - component: {fileID: 1910402954}
   m_Layer: 0
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1189,7 +1175,7 @@ Prefab:
         type: 2}
       propertyPath: textUI
       value: 
-      objectReference: {fileID: 780885544}
+      objectReference: {fileID: 0}
     - target: {fileID: 1804275667192190, guid: eda1a610da3924144a54ce7f7be4b912, type: 2}
       propertyPath: m_TagString
       value: Player
@@ -1232,6 +1218,16 @@ Prefab:
     - target: {fileID: 114053937467848010, guid: eda1a610da3924144a54ce7f7be4b912,
         type: 2}
       propertyPath: skills.Array.data[0].available
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114053937467848010, guid: eda1a610da3924144a54ce7f7be4b912,
+        type: 2}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 4043627614379942, guid: a2679db9160109040a037a27a6b1dd89,
+        type: 2}
+    - target: {fileID: 4361872995790958, guid: eda1a610da3924144a54ce7f7be4b912, type: 2}
+      propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
