@@ -613,7 +613,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1433492487}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746e7aa1a8ba4654e873bfc3dffc37b5, type: 3}
   m_Name: 
@@ -684,6 +684,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1530422189101318, guid: 42d7062aa58799c479c74be128717ebd, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070239486314134, guid: 42d7062aa58799c479c74be128717ebd, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61844610700696356, guid: 42d7062aa58799c479c74be128717ebd,
+        type: 2}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1229,6 +1238,11 @@ Prefab:
     - target: {fileID: 4361872995790958, guid: eda1a610da3924144a54ce7f7be4b912, type: 2}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114053937467848010, guid: eda1a610da3924144a54ce7f7be4b912,
+        type: 2}
+      propertyPath: topSpd
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eda1a610da3924144a54ce7f7be4b912, type: 2}

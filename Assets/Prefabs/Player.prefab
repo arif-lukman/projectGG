@@ -99,8 +99,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e202ec49d96364438c6aab16a40f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  bc2d: {fileID: 0}
   rb2d: {fileID: 50576073119975894}
+  sp: {fileID: 0}
   textUI: {fileID: 0}
+  hp: 100
+  movSpd: 0
+  jmpSpd: 0
+  topSpd: 0
+  posSt: 0
+  facSt: 0
+  skills: []
 --- !u!212 &212161006417806632
 SpriteRenderer:
   m_ObjectHideFlags: 1

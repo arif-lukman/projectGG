@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class playerHandler : MonoBehaviour {
 
 	//BUGS
-	//player bisa terputar
-	//kalo nyentuh objek healing orb loncatnya tinggi
+	//None
 
 	//TODO:
-	//1. Fix bug
-	//2. Bikin attack mechanism
+	//1. Jarak projectile
+	//2. Attack musuh (melee & range)
+	//3. Boss wave
+	//4. Opsi wave (normal / boss)
+	//5. Boss 1st, 2nd, 3rd Attack Pattern
 
 	//class skill
 	[System.Serializable]
@@ -69,18 +71,24 @@ public class playerHandler : MonoBehaviour {
 	//var UI debug
 	public Text textUI;
 
+	//var public hp
+	public float hp;
+
 	//var kecepatan gerak
 	public float movSpd;
 
 	//var kecepatan loncat
 	public float jmpSpd;
 
+	//var batas movespeed
+	public float topSpd;
+
 	//var boleh loncat apa engga
 	private bool canJump;
 
 	//set state
 	public posState posSt;
-	private facState facSt;
+	public facState facSt;
 	private mtnState mtnSt = mtnState.MOVING;
 
 	//objek upper platform
@@ -137,6 +145,15 @@ public class playerHandler : MonoBehaviour {
 			canJump = false;
 		}
 		//Debug.Log ("Can Jump = " + canJump);
+	}
+
+	//fungsi apply damage
+	void ApplyDamage(int dmg){
+		//if (state != enemyState.KNOCKBACKED) {
+		hp -= dmg;
+		//aggSt = aggState.NOAGGRO;
+		//mtnSt = mtnState.KNOCKBACKED;
+		//}
 	}
 
 	void CooldownHandling(){
@@ -200,7 +217,7 @@ public class playerHandler : MonoBehaviour {
 		} else {
 			//countdown
 			skills[0].timeLeft -= Time.deltaTime;
-			Debug.Log ("Time left to next evasion: " + skills[0].timeLeft);
+			//Debug.Log ("Time left to next evasion: " + skills[0].timeLeft);
 		}
 	}
 
@@ -257,7 +274,11 @@ public class playerHandler : MonoBehaviour {
 			dir = new Vector2 (-movSpd, 0f);
 			facSt = facState.LEFT;
 		}
-		rb2d.AddForce (dir);
+		//batasin movespeednya
+		if (rb2d.velocity.x >= -topSpd && rb2d.velocity.x <= topSpd) {
+			rb2d.AddForce (dir);
+		}
+		//Debug.Log (rb2d.velocity);
 	}
 		
 	//fungsi evade
@@ -328,6 +349,7 @@ public class playerHandler : MonoBehaviour {
 		//Debug.Log ("his y = " +top.transform.position.y);
 	}
 
+	//fungsi attack
 	void Attacking(){
 		//ambil lebar sprite
 		//Debug.Log("Attacking");
